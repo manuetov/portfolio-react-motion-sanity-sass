@@ -1,0 +1,145 @@
+.app__skills {
+   flex: 1;
+   width: 100%;
+   flex-direction: column;
+   .head-text{
+      margin-bottom: 5rem;
+   }
+}
+
+.app__header-circles {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items: flex-start;
+   height: 100%;
+   padding:4rem 2rem;
+
+   div {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+
+      background: var(--white-color);
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+
+      img {
+         height: 80%;
+         border-radius: 0%;
+         margin: 1rem;
+         padding: .5rem;
+         border-radius: 15%; 
+      }
+   }
+
+   // circles with different height & width
+
+   // div:nth-child(1) {
+   //    width: 110px;
+   //    height: 110px;
+   // }
+
+   // div:nth-child(2) {
+   //    margin: 3rem;
+   //    padding: .5rem;
+   //    width: 100px;
+   //    height: 100px;
+   // }
+
+   // div:nth-child(3) {
+   //    margin: 0.5rem;
+   //    width: 95px;
+   //    height: 95px;
+   // }
+
+   // div:nth-child(4) {
+   //    margin: 3rem;
+   //    width: 110px;
+   //    height: 110px;
+
+   //    img {
+   //       border-radius: 50%;
+   //    }
+   // }
+  
+   // div:nth-child(5) {
+   //    width: 95px;
+   //    height: 95px;
+      
+   //    img {
+   //       border-radius: 50%;
+   //    }
+   // }
+
+   // div:nth-child(6) {
+   //    margin: 3rem;
+   //    padding: .5rem;
+   //    width: 105px;
+   //    height: 105px;
+   //    img {
+   //       border-radius: 15%;
+   //    }
+   // }
+
+   // div:nth-child(7) {
+   //    margin: 1rem;
+   //    width: 90px;
+   //    height: 90px;
+   // }
+
+   // div:nth-child(8) {
+   //    margin: 3rem;
+   //    padding: .5rem;
+   //    width: 80px;
+   //    height: 80px;
+
+   //    img {
+   //       border-radius: 15%;
+   //    }
+   // }
+
+   // div:nth-child(9) {
+   //    margin: 3rem;
+   //    width: 90px;
+   //    height: 90px;
+
+   //    img {
+   //       border-radius: 50%;
+   //    }
+   // }
+
+   // div:nth-child(10) {
+   //    width: 110px;
+   //    height: 110px;
+   // }
+
+
+   // div:nth-child(11) {
+   //    padding: .5rem;
+   //    width: 80px;
+   //    height: 80px;
+   // }
+
+   
+   // div:nth-child(12) {
+   //    margin: 3rem;
+   //    width: 80px;
+   //    height: 80px;
+      
+   //    img {
+   //       border-radius: 50%;
+   //    }
+   // }
+
+   @media screen and (max-width: 5000px) {
+      width: 100%;
+      align-items: flex-end;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-left: 0;
+
+      div {
+         margin: 1rem;
+      }
+   }
+}

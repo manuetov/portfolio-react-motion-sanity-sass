@@ -1,0 +1,145 @@
+#home {
+   // position: relative;
+   // background: url("../../assets/bgIMG.png");
+   // background-size: cover;
+   // background-position: center;
+   // background-repeat: repeat;
+
+   // disable the default padding styles
+   .app__wrapper {
+      padding: 0rem;
+   }
+}
+
+.app__header {
+   width: 100%;
+   height: 100%;
+   flex-direction: row;
+
+   img {
+      border-bottom-left-radius: 50%;
+      border-top-right-radius: 50%;
+      // border-radius: 50%;
+      // overflow: hidden;
+   }
+
+   padding: 2rem 0rem;
+
+   @media screen and (min-width: 2000px) {
+     padding-top: 8rem;
+   }
+
+   @media screen and (max-width: 2000px) {
+      flex-direction: column;
+   }
+
+   @media screen and (max-width: 450px) {
+      padding: 6rem 0rem 2rem;
+   }
+}
+
+.app__header-info {
+   flex: 0.25;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: flex-start;
+   height: auto;
+
+   // margin: 0 2rem;
+
+   @media screen and (max-width: 1200px) {
+      width: 100%;
+      margin-right: 0rem;
+   }
+}
+
+.app__header-badge {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: flex-start;
+   flex-direction: column;
+   margin-bottom: 1rem;
+   
+   span {
+      font-size: 2rem;
+      @media screen and (min-width: 2000px) {
+         font-size: 3rem;
+      }
+   }
+   
+   .badge-name,
+   .tag-dev {
+      margin-top: 1.4rem;
+      padding: 1rem 1rem;
+      background: var(--white-color);
+      border-radius: 15px;
+      flex-direction: row;
+      width: auto;
+
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+   }
+
+   .tag-dev {
+      flex-direction: column;
+      margin: 2rem;
+
+      p {
+         width: 100%;
+         text-align: center;
+      }
+   }
+
+   @media screen and (max-width: 1200px) {
+      justify-content: flex-start;
+      align-items: center;
+   }
+}
+
+
+.app__header-img {
+   // flex: 1;
+   display: flex;
+   position: relative;
+   justify-content: center;
+   align-items: flex-end;
+
+   object-fit: contain;
+   z-index: 1;
+
+   img {
+      width: 60%;
+      margin-bottom: 1rem;
+
+   }
+   .bg_animation {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      z-index: -1;
+      width: 300%;
+      height: 100%;
+   }
+
+   @media screen and (max-width: 1200px) {
+      margin: 2rem 0;
+   }
+}
+
+.app__about {
+   margin-top: 2.5rem;
+   width: 80%;
+   justify-content: center;
+   text-align: justify;
+   h2 {
+      padding-bottom: 1rem;
+   }
+   .app_profile{
+      padding-top:2rem;
+   }
+
+   
+ }
