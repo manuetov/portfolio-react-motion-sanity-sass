@@ -27,6 +27,7 @@ import linux from '../assets/linux.png';
 import seo from '../assets/seo.png';
 import mongodb from '../assets/mongodb.png';
 import mysql from '../assets/mysql.png';
+import wordpress from '../assets/wordpress.png';
 
 
 
@@ -70,5 +71,7 @@ export default {
   seo,
   mongodb,
   mysql,
+  wordpress,
+  
 
 };
