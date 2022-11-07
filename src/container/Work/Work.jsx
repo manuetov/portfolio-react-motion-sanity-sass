@@ -52,7 +52,7 @@ const Work = () => {
       </h2>
 
       <div className="app__work-filter-bottom">
-        {["Todos", "Frontend", "Backend", "FullStack", "Wordpress"].map(
+        {["Todos", "Frontend", "FullStack", "Wordpress"].map(
           (item, index) => (
             <div
               key={index}
