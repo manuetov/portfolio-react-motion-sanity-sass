@@ -46,6 +46,10 @@ const Skills = () => (
         images.html,
         images.css,
         images.wordpress,
+        images.flask,
+        images.handlebars,
+        images.mui
+
 
       ].map((circle, index) => (
         <div className="app__flex" key={`circle-${index}`}>

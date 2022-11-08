@@ -28,7 +28,9 @@ import seo from '../assets/seo.png';
 import mongodb from '../assets/mongodb.png';
 import mysql from '../assets/mysql.png';
 import wordpress from '../assets/wordpress.png';
-
+import flask from '../assets/flask.png';
+import handlebars from '../assets/handlebars.png';
+import mui from '../assets/mui.png';
 
 
 import bgIMG from '../assets/bgIMG.png';
@@ -72,6 +74,8 @@ export default {
   mongodb,
   mysql,
   wordpress,
+  flask,
+  handlebars,
+  mui
   
-
 };
