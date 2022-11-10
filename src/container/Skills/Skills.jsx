@@ -25,35 +25,34 @@ const Skills = () => (
       className="app__header-circles"
     >
       {[
-        images.node,
-        images.react,
-        images.sass,
-        images.javascript,
-        images.tailwind,
-        images.bootstrap,
-        images.redux,
-        images.typescript,
-        images.python,
-        images.github,
-        images.docker,
-        images.nginx,
-        images.graphql,
-        images.aws,
-        images.linux,
-        images.seo,
-        images.mongodb,
-        images.mysql,
-        images.html,
-        images.css,
-        images.wordpress,
-        images.flask,
-        images.handlebars,
-        images.mui
-
+        images.Node,
+        images.React,
+        images.Sass,
+        images.JavaScript,
+        images.Tailwind,
+        images.Bootstrap,
+        images.Redux,
+        images.TypeScript,
+        images.Python,
+        images.Github,
+        images.Docker,
+        images.Nginx,
+        images.GraphQL,
+        images.AWS,
+        images.Linux,
+        images.Seo,
+        images.MongoDB,
+        images.MySQL,
+        images.Html,
+        images.Css,
+        images.Wordpress,
+        images.Flask,
+        images.Mui
 
       ].map((circle, index) => (
         <div className="app__flex" key={`circle-${index}`}>
           <img src={circle} alt="skills_bg" />
+          <p className="p-text-small">{circle.replace('/static/media/', ' ').split('.',1)}</p> 
         </div>
       ))}
     </motion.div>

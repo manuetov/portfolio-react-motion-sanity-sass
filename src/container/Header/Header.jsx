@@ -10,7 +10,7 @@ import { Cursor, useTypewriter } from 'react-simple-typewriter'
 const Header = () => {
   const [about, setAbout] = useState([]);
   const [isFetching, setIsFetching] = useState(true);
-  const [ text, count ] = useTypewriter({
+  const [ text ] = useTypewriter({
     words: [
      '<Full Stack Web Developer Freelancer/>',
      'Ningún código tiene cero defectos.',
@@ -21,7 +21,9 @@ const Header = () => {
      '<ButLoveCoding/>',
     ],
     loop: true,
-    delaySpeed: 2000,
+    typeSpeed: 90,
+    delaySpeed: 1500,
+    deleteSpeed: 25
   })
   
 
@@ -65,7 +67,9 @@ const Header = () => {
         </div>  */}
       </div>
       <div className="tag-dev app__flex">
-        <p className="p-text" style={{ color: '#e6ebed', backgroundColor: '#313448'}}>{text}<Cursor cursorColor='#e6ebed'/></p>
+        <p className="p-text" style={{ color: '#4CBB17', backgroundColor: '#313448', padding: "3px" }}>
+          {text}<Cursor cursorColor='#4CBB17'/>
+        </p>
       </div>
 
 
