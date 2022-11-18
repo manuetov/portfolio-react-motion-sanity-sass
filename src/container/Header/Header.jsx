@@ -12,13 +12,13 @@ const Header = () => {
   const [isFetching, setIsFetching] = useState(true);
   const [ text ] = useTypewriter({
     words: [
-     '<Full Stack Web Developer Freelancer/>',
-     'Ningún código tiene cero defectos.',
-     'A program is never less than 90% complete and never more than 95% complete.',
-     '<ButLoveCoding/>',
-     'Deleted code is debugged code.',
-     'Software and cathedrals are much the same, first we build them, then we pray.',
-     '<ButLoveCoding/>',
+     '<Full Stack Web Developer Freelancer ​👨‍💻​/>',
+     'Ningún código tiene cero defectos.💪​',
+     'A program is never less than 90% complete and never more than 95% complete.​💻',
+     '<ButLoveCoding 🙂​/>',
+     'Deleted code is debugged code.🤣​',
+     'Software and cathedrals are much the same, first we build them, then we pray.​😂​',
+     '<ButLoveCoding 🙂​/>',
     ],
     loop: true,
     typeSpeed: 90,
