@@ -66,8 +66,13 @@
 
       transition: all 0.3s ease-in-out;
 
+      &:active{
+        border-radius: 10%;
+        background-color: var(--secondary-color);
+      }
+
       &:hover {
-        color: var(--secondary-color);
+        color: var(--black-color);
       }
     }
 
@@ -82,6 +87,7 @@
     display: none;
   }
 }
+
 
 .app__navbar-menu {
   width: 35px;
@@ -164,8 +170,13 @@
 
           transition: all 0.3s ease-in-out;
 
+          &:active {
+            font-size: 3rem;
+          }
+
           &:hover {
-            color: var(--secondary-color);
+            color: var(--secundary-color);
+            font-weight: 700;
           }
         }
       }

@@ -36,7 +36,7 @@ const Navbar = () => {
             <HiX onClick={() => setHamMenu(false)} />
             <ul>
               {["Home", "Habilidades", "Proyectos", "Contacto"].map((item) => (
-                <li key={item}>
+                <li key={item} >
                   <a href={`#${item}`} onClick={() => setHamMenu(false)}>
                     {item}
                   </a>
