@@ -41,6 +41,10 @@ const Footer = () => {
       .catch((err) => console.log(err));
   };
 
+  if(isFetching) {
+    return <h2>Enviando....</h2>
+  }
+
   return (
     <div className="app__footer">
       <h3 className="head-text-nc"> Contáctame en el <span>Formulario</span> o directamente al <span>email</span> </h3>
