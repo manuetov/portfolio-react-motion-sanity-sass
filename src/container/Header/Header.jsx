@@ -99,6 +99,13 @@ const Header = () => {
           ))}
         </div>
       </div>
+        <button className="app__profile_cv">
+
+          <a href="https://manutov-cv.netlify.app/" target="_blank" rel="noopener noreferrer" alt="Curriculum Vitae"  className="p-text">
+            Ver Curriculum Vitae
+          </a>
+
+        </button>
     </div>
   );
 };

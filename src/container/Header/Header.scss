@@ -26,7 +26,7 @@
    padding: 2rem 0rem;
 
    @media screen and (min-width: 2000px) {
-     padding-top: 8rem;
+      padding-top: 8rem;
    }
 
    @media screen and (max-width: 4000px) {
@@ -61,14 +61,15 @@
    align-items: flex-start;
    flex-direction: column;
    margin-bottom: 1rem;
-   
+
    span {
       font-size: 2rem;
+
       @media screen and (min-width: 2000px) {
          font-size: 3rem;
       }
    }
-   
+
    .badge-name,
    .tag-dev {
       margin-top: 1.4rem;
@@ -113,6 +114,7 @@
       margin-bottom: 1rem;
 
    }
+
    .bg_animation {
       position: absolute;
       left: 0;
@@ -134,12 +136,41 @@
    width: 80%;
    justify-content: center;
    text-align: justify;
+
    h2 {
       padding-bottom: 1rem;
    }
-   .app_profile{
-      padding-top:2rem;
+
+   .app_profile {
+      padding-top: 2rem;
+   }
+}
+
+.app__profile_cv {
+   min-width: 200px;
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   align-items: center;
+
+   margin: 2rem 0;
+   padding: .5rem;
+   border-radius: 10px;
+   cursor: pointer;
+   background-color: #fef4f5;
+
+   transition: all 0.3s ease-in-out;
+
+   a {
+      text-decoration: none;
+      font-weight: 500;
    }
 
-   
- }
+   &:hover {
+      box-shadow: 0 0 25px #fef4f5;
+   }
+
+   @media screen and (max-width: 450px) {
+      width: 80%;
+   }
+}
