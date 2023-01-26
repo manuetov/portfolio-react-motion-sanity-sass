@@ -15,6 +15,9 @@ const Work = () => {
 
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth)
+  console.log(isMobile)
+
   useEffect(() => {
     const query = '*[_type == "works"]';
 
@@ -24,6 +27,16 @@ const Work = () => {
       setIsFetching(false);
     });
   }, []);
+
+  useEffect(() => {
+    const handleWindowsResize = () => {
+      setIsMobile(window.innerWidth)
+    }
+    window.addEventListener('resize', handleWindowsResize)
+    return () => {
+      window.removeEventListener('resize', handleWindowsResize)
+    }
+  }, [])
 
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
@@ -74,7 +87,8 @@ const Work = () => {
           <div className="app__filter-work-card-item app__flex" key={index}>
             <div className="app__filter-work-card-img app__flex">
               <img src={urlFor(work.imgUrl)} alt={work.name} />
-
+              
+              {isMobile > 820 ? (
               <motion.div
                 whileHover={{ opacity: [0, 1] }}
                 transition={{
@@ -84,11 +98,7 @@ const Work = () => {
                 }}
                 className="app__filter-work-card-hover app__flex"
               >
-                <a
-                  href={work.projectLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href={work.projectLink} target="_blank" rel="noopener noreferrer">
                   <motion.div
                     whileInView={{ scale: [0, 1] }}
                     whileHover={{ scale: [1, 0.9] }}
@@ -110,6 +120,25 @@ const Work = () => {
                   </motion.div>
                 </a>
               </motion.div>
+              ) : (
+                <div className="app__filter-work-card-mobile app__flex">
+                  <a
+                  className="mobile"
+                  href={work.projectLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                > 
+                <AiFillEye />
+                </a> 
+                <a
+                  className="mobile" 
+                  href={work.codeLink} 
+                  target="_blank"
+                  rel="noopener noreferrer">  
+                  <AiFillGithub /> 
+                </a>
+                </div>
+               )}
             </div>
 
             <div className="app__filter-work-card-content app__flex">
