@@ -36,6 +36,8 @@ import bgIMG from '../assets/bgIMG.png';
 import profile from '../assets/profile.png';
 import circle from '../assets/circle.svg';
 import logo from '../assets/logo.png';
+import spring from '../assets/spring.png';
+import java from '../assets/java.png'
 
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -75,5 +77,7 @@ export default {
   MySQL,
   Wordpress,
   Flask,
-  Mui  
+  Mui,  
+  spring,
+  java
 };
