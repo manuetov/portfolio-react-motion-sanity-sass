@@ -40,6 +40,7 @@ import spring from '../assets/spring.png';
 import java from '../assets/java.png'
 
 
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   email,
@@ -79,5 +80,6 @@ export default {
   Flask,
   Mui,  
   spring,
-  java
+  java,
+
 };

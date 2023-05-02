@@ -5,27 +5,29 @@ import { client } from "../../client";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { images } from "../../constants";
 import BgAnimation from "../../components/BackgroundAnimation/BackgroundAnimation";
-import { Cursor, useTypewriter } from 'react-simple-typewriter'
+import { Cursor, useTypewriter } from "react-simple-typewriter";
+
+const initialTextLength = 450;
 
 const Header = () => {
   const [about, setAbout] = useState([]);
   const [isFetching, setIsFetching] = useState(true);
-  const [ text ] = useTypewriter({
+  const [text] = useTypewriter({
     words: [
-     '<Full Stack Web Developer Freelancer 👨‍💻​/>',
-     'Ningún código tiene cero defectos.💪​',
-     'A program is never less than 90% complete and never more than 95% complete.​💻',
-     '<ButLoveCoding 🙂​/>',
-     'Deleted code is debugged code.🤣​',
-     'Software and cathedrals are much the same, first we build them, then we pray.​​🙏​​',
-     '<ButLoveCoding 🙂​/>',
+      "<Full Stack Web Developer Freelancer 👨‍💻​/>",
+      "Ningún código tiene cero defectos.💪​",
+      "A program is never less than 90% complete and never more than 95% complete.​💻",
+      "<ButLoveCoding 🙂​/>",
+      "Deleted code is debugged code.🤣​",
+      "Software and cathedrals are much the same, first we build them, then we pray.​​🙏​​",
+      "<ButLoveCoding 🙂​/>",
     ],
     loop: true,
     typeSpeed: 90,
     delaySpeed: 1500,
-    deleteSpeed: 25
-  })
-  
+    deleteSpeed: 25,
+  });
+  const [showMoreText, setShowMoreText] = useState(false);
 
   useEffect(() => {
     // sanity
@@ -38,7 +40,7 @@ const Header = () => {
   }, []);
 
   if (isFetching) {
-    <h2> Cargando... </h2>;
+    return <h2> Cargando... </h2>;
   }
 
   return (
@@ -67,19 +69,26 @@ const Header = () => {
         </div>  */}
       </div>
       <div className="tag-dev app__flex">
-        <p className="p-text" style={{ color: '#4CBB17', backgroundColor: '#313448', padding: "3px" }}>
-          {text}<Cursor cursorColor='#4CBB17'/>
+        <p
+          className="p-text"
+          style={{
+            color: "#4CBB17",
+            backgroundColor: "#313448",
+            padding: "3px",
+          }}
+        >
+          {text}
+          <Cursor cursorColor="#4CBB17" />
         </p>
       </div>
-
-
       <div className="app__about">
         <h2 className="head-text">
           Acerca{" "}
-          <span style={{ textTransform: "lowercase", color: "#242020" }}>de</span>{" "}
+          <span style={{ textTransform: "lowercase", color: "#242020" }}>
+            de
+          </span>{" "}
           <span> mí. </span>
         </h2>
-
         <div className="app__profile">
           {about.map((about, index) => (
             <motion.div
@@ -93,26 +102,38 @@ const Header = () => {
                 {about.title}
               </h2>
               <p className="p-text" style={{ marginTop: 10 }}>
-                {about.description}
+                {showMoreText
+                  ? about.description
+                  : `${about.description.substring(0, initialTextLength)}... `}
+                {!showMoreText &&
+                  about.description.length > initialTextLength && (
+                    <button onClick={() => setShowMoreText(true)}>
+                      Leer más
+                    </button>
+                  )}
               </p>
             </motion.div>
           ))}
         </div>
       </div>
-        <button className="app__profile btn_cv">
-
-          <a href="https://manutov-cv.netlify.app/" target="_blank" rel="noopener noreferrer" alt="Curriculum Vitae"  className="p-text">
-            Ver Curriculum Vitae
-          </a>
-
-        </button>
+      <button className="app__profile btn_cv">
+        <a
+          href="https://manutov-cv.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          alt="Curriculum Vitae"
+          className="p-text"
+        >
+          Ver Curriculum Vitae
+        </a>
+      </button>
     </div>
   );
 };
 
 // wrap and pass id=home how parameter
 export default AppWrap(
-  MotionWrap(Header, 'app__header'),
-    'Home',
-    'app__primarybg'
-  );
+  MotionWrap(Header, "app__header"),
+  "Home",
+  "app__primarybg"
+);

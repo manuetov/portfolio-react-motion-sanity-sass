@@ -49,7 +49,8 @@ const Skills = () => (
         images.Flask,
         images.Mui,
         images.spring,
-        images.java
+        images.java,
+
 
       ].map((circle, index) => (
         <div className="app__flex" key={`circle-${index}`}>
