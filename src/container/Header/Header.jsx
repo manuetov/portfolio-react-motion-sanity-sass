@@ -7,7 +7,8 @@ import { images } from "../../constants";
 import BgAnimation from "../../components/BackgroundAnimation/BackgroundAnimation";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 
-const initialTextLength = 450;
+
+const initialTextLength = 448
 
 const Header = () => {
   const [about, setAbout] = useState([]);
@@ -27,12 +28,12 @@ const Header = () => {
     delaySpeed: 1500,
     deleteSpeed: 25,
   });
-  const [showMoreText, setShowMoreText] = useState(false);
+  const [showMoreText, setShowMoreText] = useState(false)
+
 
   useEffect(() => {
     // sanity
     const query = '*[_type == "abouts"]';
-
     client.fetch(query).then((data) => {
       setAbout(data);
       setIsFetching(false);
@@ -90,23 +91,28 @@ const Header = () => {
           <span> mí. </span>
         </h2>
         <div className="app__profile">
-          {about.map((about, index) => (
+          {about.map((item, index) => (
             <motion.div
               whileInView={{ opacity: 1 }}
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.5, type: "tween" }}
-              key={about.title + index}
+              key={index}
             >
               {/* <img src={urlFor(about.imgUrl)} alt={about.title} /> */}
               <h2 className="bold-text" style={{ marginTop: 20 }}>
-                {about.title}
+                {item.title}
               </h2>
+
+              {/* <p className="p-text" style={{ marginTop: 10 }}>
+                {item.description}
+              </p> */}
+
               <p className="p-text" style={{ marginTop: 10 }}>
                 {showMoreText
-                  ? about.description
-                  : `${about.description.substring(0, initialTextLength)}... `}
+                  ? item.description
+                  : `${item.description.substring(0, initialTextLength)}... `}
                 {!showMoreText &&
-                  about.description.length > initialTextLength && (
+                  item.description.length > initialTextLength && (
                     <button onClick={() => setShowMoreText(true)}>
                       Leer más
                     </button>
@@ -137,3 +143,35 @@ export default AppWrap(
   "Home",
   "app__primarybg"
 );
+
+{/* <p className="p-text" style={{ marginTop: 10 }}>
+          {showMoreText
+            ? item.description
+            : `${item.description.substring(0, initialTextLength)}... `}
+          {!showMoreText &&
+            item.description.length > initialTextLength && (
+              <button onClick={() => setShowMoreText(true)}>
+                Leer más
+              </button>
+            )}
+        </p> */}
+
+             {/* <p className="p-text" style={{ marginTop: 10 }}>
+          {item.description.length > initialTextLength && !showMoreText
+            ? `${item.description.substring(0, initialTextLength)}... `
+            : item.description}
+          {item.description.length > initialTextLength && !showMoreText && (
+            <button onClick={() => setShowMoreText(true)}>Leer más</button>
+          )}
+        </p> */}
+              {/* <p className="p-text" style={{ marginTop: 10 }}>
+                {showMoreText
+                  ? item.description
+                  : `${item.description.substring(0, initialTextLength)}... `}
+              {!showMoreText &&
+                item.description.length > initialTextLength && (
+                  <button onClick={() => setShowMoreText(true)}>
+                    Leer más
+                  </button>
+                )}
+                </p> */}
